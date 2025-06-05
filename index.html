@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StatClaim - Commercial Debt Recovery</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --blue-dark: #1e3a8a;
+      --blue-mid: #3b82f6;
+      --grey-bg: #f9fafb;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--grey-bg);
+      color: #2a2a2a;
+    }
+
+    header {
+      position: relative;
+    }
+
+    .header-background {
+      background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(21, 128, 61, 0.8)),
+        url('images/parabolic-pentagon.png') center/cover no-repeat;
+      padding: 2rem 0 1rem;
+      color: #fff;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0.5rem 0;
+      background: transparent;
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #a5c9ff;
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .logo {
+      height: 100px;
+      
+      
+    }
+
+    .site-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: 1rem 0 0.25rem;
+    }
+
+    .site-subtitle {
+      color: #dbeafe;
+      font-size: 1rem;
+    }
+
+    .header-cta {
+      color: #e0fce8;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .hero {
+      background: url('images/pexels-anna-nekrashevich-6801647.jpg') center/cover no-repeat;
+      border: 5px solid #fff;
+      border-radius: 12px;
+      margin: 3rem auto;
+      width: 95%;
+      max-width: 1600px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 6rem 2rem;
+      text-align: center;
+      color: #fff;
+      border-radius: 8px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+<h1 class="typing" data-text="Fed up of customers paying you late?"></h1>
+
+
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-text button {
+      background: #fff;
+      color: #002F00;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .hero-text button:hover {
+      transform: scale(1.05);
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .service {
+      flex: 1 1 calc(33% - 1.5rem);
+      background: #fff;
+      padding: 1.8rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .service i {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--blue-dark);
+    }
+
+    .service h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+    }
+
+    .service p {
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+
+    footer {
+      background: #101f3b;
+      color: #fff;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    footer h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      max-width: 420px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    input, textarea, button[type="submit"] {
+      font-size: 1rem;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 6px;
+    }
+button {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+    button[type="submit"] {
+      background: var(--blue-mid);
+      color: #fff;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      transform: scale(1.03);
+      background-color: #2563eb;
+    }
+
+section, footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+<section data-aos="fade-up">...</section>
+
+body.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+
+    footer p {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      .services {
+        flex-direction: column;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+
+      .logo {
+        height: 70px;
+      }
+
+      .site-title {
+        font-size: 1.8rem;
+      }
+
+.sticky-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #3b82f6;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-background">
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Debt Recovery</a>
+        <a href="#">Late Payment Fees</a>
+        <a href="#">FAQs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-content">
+        <img src="images/logo.new.png" alt="StatClaim logo" class="logo">
+        <h1 class="site-title">StatClaim</h1>
+        <p class="site-subtitle">Commercial Debt Recovery Specialists</p>
+        <p class="header-cta">Get paid faster. Legally. Without the stress.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-text" data-aos="zoom-in">
+        <h1>Fed up of customers paying you late?</h1>
+        <p>We help businesses claim statutory late payment fees & interest — fast, legally, and professionally.</p>
+        <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+          Start Your Claim
+        </button>
+
+
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="services">
+      <div class="service" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-file-invoice-dollar"></i>
+        <h3>Debt Recovery</h3>
+        <p>Professional and courteous commercial debt recovery services tailored to your needs.</p>
+      </div>
+      <div class="service" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-gavel"></i>
+        <h3>Statutory Compensation</h3>
+        <p>Help claiming compensation and interest due under late payment legislation.</p>
+      </div>
+      <div class="service" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-balance-scale"></i>
+        <h3>Legal Expertise</h3>
+        <p>Access to experienced solicitors and recovery specialists for full support.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer id="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="return validateForm()">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p>&copy; 2025 StatClaim. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Form & Sticky Nav -->
+  <script>
+    function validateForm() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      if (!name || !email || !message) {
+        alert("Please fill out all fields.");
+        return false;
+      }
+      alert("Thank you! Your message has been received.");
+      return false;
+    }
+
+    window.addEventListener("scroll", () => {
+      document.querySelector("nav").classList.toggle("scrolled", window.scrollY > 10);
+    });
+  </script>
+
+  <!-- AOS Animation Init -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>
